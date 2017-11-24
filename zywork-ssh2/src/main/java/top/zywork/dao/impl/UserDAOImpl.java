@@ -89,7 +89,7 @@ public class UserDAOImpl extends AppDaoSupport implements UserDAO {
     }
 
     @Override
-    public long count() {
-        return 0;
+    public Long count() {
+        return 0L;
     }
 }

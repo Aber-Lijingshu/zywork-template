@@ -82,7 +82,7 @@ public class ProcessDAOImpl extends AppDaoSupport implements ProcessDAO {
     }
 
     @Override
-    public long count() {
+    public Long count() {
         return getHibernateTemplate().execute(new HibernateCallback<Long>() {
             @Override
             public Long doInHibernate(Session session) throws HibernateException {

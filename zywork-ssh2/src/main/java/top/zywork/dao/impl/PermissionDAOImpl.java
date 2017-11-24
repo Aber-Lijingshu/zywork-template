@@ -113,7 +113,7 @@ public class PermissionDAOImpl extends AppDaoSupport implements PermissionDAO {
     }
 
     @Override
-    public long count() {
-        return 0;
+    public Long count() {
+        return 0L;
     }
 }

@@ -72,5 +72,5 @@ public interface BaseDAO<T extends BaseDO> {
      * 返回记录数
      * @return 记录数
      */
-    long count();
+    Long count();
 }

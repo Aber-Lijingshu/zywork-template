@@ -63,7 +63,7 @@ public class TemplateDAOImpl extends AppDaoSupport implements TemplateDAO {
     }
 
     @Override
-    public long count() {
-        return 0;
+    public Long count() {
+        return 0L;
     }
 }

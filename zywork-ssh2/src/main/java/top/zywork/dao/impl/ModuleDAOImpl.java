@@ -64,7 +64,7 @@ public class ModuleDAOImpl extends AppDaoSupport implements ModuleDAO {
     }
 
     @Override
-    public long count() {
-        return 0;
+    public Long count() {
+        return 0L;
     }
 }

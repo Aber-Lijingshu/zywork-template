@@ -83,7 +83,7 @@ public class RoleDAOImpl extends AppDaoSupport implements RoleDAO {
     }
 
     @Override
-    public long count() {
-        return 0;
+    public Long count() {
+        return 0L;
     }
 }
