@@ -8,8 +8,9 @@ package top.zywork.query;
  * @author 王振宇
  * @version 1.0
  */
-public class StatusQuery {
+public class StatusQuery extends BaseQuery {
 
+    private static final long serialVersionUID = -8543807353237586473L;
     private Long id;
     private Integer status;
 

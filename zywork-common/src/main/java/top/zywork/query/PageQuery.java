@@ -7,8 +7,9 @@ package top.zywork.query;
  * @author 王振宇
  * @version 1.0
  */
-public class PageQuery {
+public class PageQuery extends BaseQuery {
 
+    private static final long serialVersionUID = 2691743450470042585L;
     private Integer pageNo;
     private Integer pageSize;
 
