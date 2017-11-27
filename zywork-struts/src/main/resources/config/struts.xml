@@ -5,7 +5,7 @@
 <struts>
 
     <constant name="struts.custom.i18n.resources" value="i18n/messages"/>
-    <constant name="struts.multipart.saveDir" value="/upload"/>
+    <constant name="struts.multipart.saveDir" value="uploads"/>
     <constant name="struts.multipart.maxSize" value="104857600"/>
     <constant name="struts.serve.static" value="false"/>
     <constant name="struts.convention.action.packages" value="top.zywork.controller"/>

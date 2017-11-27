@@ -65,7 +65,7 @@ public class ProcessDAOImpl extends AppDaoSupport implements ProcessDAO {
 
     @Override
     public List<ProcessDO> listPage(PageQuery pageQuery) {
-        List<ProcessDO> processDOList = getHibernateTemplate().execute(new HibernateCallback<List<ProcessDO>>() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<ProcessDO>>() {
             @Override
             public List<ProcessDO> doInHibernate(Session session) throws HibernateException {
                 try {
@@ -78,7 +78,6 @@ public class ProcessDAOImpl extends AppDaoSupport implements ProcessDAO {
                 }
             }
         });
-        return processDOList;
     }
 
     @Override

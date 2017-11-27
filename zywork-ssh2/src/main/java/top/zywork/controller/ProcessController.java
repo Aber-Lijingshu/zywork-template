@@ -16,7 +16,6 @@ import top.zywork.common.ExceptionUtils;
 import top.zywork.common.PageQueryUtils;
 import top.zywork.common.WebUtils;
 import top.zywork.constant.BPMNConstants;
-import top.zywork.dto.PagerDTO;
 import top.zywork.dto.ProcessDTO;
 import top.zywork.enums.CommonControllerStatusEnum;
 import top.zywork.exception.ServiceException;
@@ -24,6 +23,7 @@ import top.zywork.query.ProcessDeployQuery;
 import top.zywork.service.ActivitiService;
 import top.zywork.service.ProcessService;
 import top.zywork.vo.ControllerStatusVO;
+import top.zywork.vo.PagerVO;
 import top.zywork.vo.ProcessVO;
 
 import java.io.File;
@@ -55,7 +55,7 @@ public class ProcessController extends BaseController {
     private String processFileName;
     private String processContentType;
     private ControllerStatusVO statusVO;
-    private PagerDTO<ProcessDTO> pagerDTO;
+    private PagerVO<ProcessDTO> pagerVO;
 
     private String processName;
 
@@ -86,9 +86,9 @@ public class ProcessController extends BaseController {
      * 分页列出所有已经上传的流程定义文件
      * @return
      */
-    @Action(value = "list_page", results = {@Result(name = "listPage", type = "json", params = {"root", "pagerDTO"})})
+    @Action(value = "list_page", results = {@Result(name = "listPage", type = "json", params = {"root", "pagerVO"})})
     public String listPage() {
-        pagerDTO = processService.listPage(PageQueryUtils.getPageQuery(1));
+        pagerVO = getDozerMapper().map(processService.listPage(PageQueryUtils.getPageQuery(1)), PagerVO.class);
         return "listPage";
     }
 
@@ -213,8 +213,8 @@ public class ProcessController extends BaseController {
         return statusVO;
     }
 
-    public PagerDTO<ProcessDTO> getPagerDTO() {
-        return pagerDTO;
+    public PagerVO<ProcessDTO> getPagerVO() {
+        return pagerVO;
     }
 
     public void setProcessName(String processName) {

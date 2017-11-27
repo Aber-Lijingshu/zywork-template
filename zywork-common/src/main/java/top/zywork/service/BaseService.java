@@ -15,21 +15,21 @@ import java.util.List;
  *
  * @author 王振宇
  * @version 1.0
- * @param <T> Service操作的数据传输对象，具体的DTO类
+ * @param <DTO> Service操作的数据传输对象，具体的DTO类
  */
-public interface BaseService<T extends BaseDTO> {
+public interface BaseService<DTO extends BaseDTO> {
 
     /**
      * 添加数据到数据库中
-     * @param t DTO数据传输对象
+     * @param dataTransferObj DTO数据传输对象
      */
-    void save(T t);
+    void save(DTO dataTransferObj);
 
     /**
      * 根据DTO实体类从数据库中删除数据
-     * @param t DTO数据传输对象
+     * @param dataTransferObj DTO数据传输对象
      */
-    void remove(T t);
+    void remove(DTO dataTransferObj);
 
     /**
      * 根据主键从数据库中删除数据
@@ -39,9 +39,9 @@ public interface BaseService<T extends BaseDTO> {
 
     /**
      * 根据对象更新数据库中的数据
-     * @param t DTO数据传输对象
+     * @param dataTransferObj DTO数据传输对象
      */
-    void update(T t);
+    void update(DTO dataTransferObj);
 
     /**
      * 根据StatusQuery查询对象更新状态值
@@ -54,18 +54,18 @@ public interface BaseService<T extends BaseDTO> {
      * @param id 主键字段值
      * @return DTO数据传输对象
      */
-    T getById(Long id);
+    DTO getById(Long id);
 
     /**
      * 查找所有记录数据
      * @return DTO数据传输对象组成的List列表
      */
-    List<T> listAll();
+    List<DTO> listAll();
 
     /**
      * 根据PageQuery分页查询对象分页查找记录数据
      * @param pageQuery 分页查询对象
      * @return 分页数据DTO对象所组成的List列表
      */
-    PagerDTO<T> listPage(PageQuery pageQuery);
+    PagerDTO<DTO> listPage(PageQuery pageQuery);
 }

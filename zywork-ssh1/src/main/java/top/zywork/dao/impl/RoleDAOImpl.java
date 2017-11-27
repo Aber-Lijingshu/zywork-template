@@ -25,7 +25,7 @@ import java.util.List;
 public class RoleDAOImpl extends AppDaoSupport implements RoleDAO {
     @Override
     public List<RoleDO> listByAccount(String account) {
-        List<RoleDO> roleDOList = getHibernateTemplate().execute(new HibernateCallback<List<RoleDO>>() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<RoleDO>>() {
             @Override
             public List<RoleDO> doInHibernate(Session session) throws HibernateException {
                 String hql = "select r from RoleDO r join r.userRoleDOSet ur join ur.userDO u"
@@ -39,7 +39,6 @@ public class RoleDAOImpl extends AppDaoSupport implements RoleDAO {
                 }
             }
         });
-        return roleDOList;
     }
 
     @Override

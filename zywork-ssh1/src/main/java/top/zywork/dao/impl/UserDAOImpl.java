@@ -27,7 +27,7 @@ public class UserDAOImpl extends AppDaoSupport implements UserDAO {
 
     @Override
     public UserDO getByAccountPassword(UserAccountPasswordQuery userAccountPasswordQuery) {
-        UserDO userDO = getHibernateTemplate().execute(new HibernateCallback<UserDO>() {
+        return getHibernateTemplate().execute(new HibernateCallback<UserDO>() {
 
             @Override
             public UserDO doInHibernate(Session session) throws HibernateException {
@@ -43,7 +43,6 @@ public class UserDAOImpl extends AppDaoSupport implements UserDAO {
                 }
             }
         });
-        return userDO;
 
     }
 

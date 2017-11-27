@@ -73,7 +73,8 @@ public class ProcessServiceImpl extends AbstractBaseService implements ProcessSe
 
     @Override
     public ProcessDTO getByName(String name) {
-        return getDozerMapper().map(processDAO.getByName(name), ProcessDTO.class);
+        ProcessDO processDO = processDAO.getByName(name);
+        return processDO == null ? null : getDozerMapper().map(processDO, ProcessDTO.class);
     }
 
     @Override

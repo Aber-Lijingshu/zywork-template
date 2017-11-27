@@ -8,9 +8,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import top.zywork.common.*;
+import top.zywork.common.DateUtils;
+import top.zywork.common.ExceptionUtils;
+import top.zywork.common.PageQueryUtils;
+import top.zywork.common.WebUtils;
 import top.zywork.constant.BPMNConstants;
-import top.zywork.dto.PagerDTO;
 import top.zywork.dto.ProcessDTO;
 import top.zywork.enums.CommonControllerStatusEnum;
 import top.zywork.exception.ServiceException;
@@ -73,11 +75,7 @@ public class ProcessController extends BaseController {
     @GetMapping("list_page")
     @ResponseBody
     public PagerVO<ProcessVO> listPage() {
-        PagerDTO<ProcessDTO> pagerDTO = processService.listPage(PageQueryUtils.getPageQuery(1));
-        PagerVO<ProcessVO> pagerVO = new PagerVO<>(pagerDTO.getPageNo(), pagerDTO.getPageSize());
-        pagerVO.setTotal(pagerDTO.getTotal());
-        pagerVO.setRows(DozerMapperUtils.map(getDozerMapper(), pagerDTO.getRows(), ProcessVO.class));
-        return pagerVO;
+        return getDozerMapper().map(processService.listPage(PageQueryUtils.getPageQuery(1)), PagerVO.class);
     }
 
     /**

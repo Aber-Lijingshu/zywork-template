@@ -35,7 +35,7 @@ public class PermissionDAOImpl extends AppDaoSupport implements PermissionDAO {
 
     @Override
     public List<PermissionDO> listByRoleIds(List<Long> roleIds) {
-        List<PermissionDO> permissionDOList = getHibernateTemplate().execute(new HibernateCallback<List<PermissionDO>>() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<PermissionDO>>() {
             @Override
             public List<PermissionDO> doInHibernate(Session session) throws HibernateException {
                 String hql = "select distinct p from PermissionDO p join p.rolePermissionDOSet rp" +
@@ -49,12 +49,11 @@ public class PermissionDAOImpl extends AppDaoSupport implements PermissionDAO {
                 }
             }
         });
-        return permissionDOList;
     }
 
     @Override
     public List<PermissionDO> listByAccount(String account) {
-        List<PermissionDO> permissionDOList = getHibernateTemplate().execute(new HibernateCallback<List<PermissionDO>>() {
+        return getHibernateTemplate().execute(new HibernateCallback<List<PermissionDO>>() {
             @Override
             public List<PermissionDO> doInHibernate(Session session) throws HibernateException {
                 String hql = "select distinct p from PermissionDO p join p.rolePermissionDOSet rp"
@@ -69,7 +68,6 @@ public class PermissionDAOImpl extends AppDaoSupport implements PermissionDAO {
                 }
             }
         });
-        return permissionDOList;
     }
 
     @Override

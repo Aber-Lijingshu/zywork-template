@@ -59,4 +59,9 @@ public class PagerDTO<T> {
     public int getBeginIndex() {
         return (pageNo - 1) * pageSize;
     }
+
+    public Long getTotalPage() {
+        long totalPage = total % pageSize;
+        return totalPage == 0 ? totalPage / pageSize : totalPage / pageSize + 1;
+    }
 }
