@@ -21,7 +21,11 @@
                 <prop key="hibernate.dialect">${hibernate.dialect}</prop>
             </props>
         </property>
-
+        <property name="packagesToScan">
+            <list>
+                <value>top.zywork.dos</value>
+            </list>
+        </property>
         <property name="mappingLocations">
             <list>
                 <value>classpath:/mapping/*.hbm.xml</value>
@@ -47,5 +51,7 @@
         <aop:pointcut id="serviceMethods" expression="execution(* top.zywork.service.impl.*.*(..))"/>
         <aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethods"/>
     </aop:config>
+
+    <tx:annotation-driven transaction-manager="transactionManager"/>
 
 </beans>

@@ -11,7 +11,6 @@ import top.zywork.exception.DAOException;
 import top.zywork.query.PageQuery;
 import top.zywork.query.StatusQuery;
 import top.zywork.service.AbstractBaseService;
-import top.zywork.service.BaseService;
 import top.zywork.service.TemplateService;
 
 import java.util.List;

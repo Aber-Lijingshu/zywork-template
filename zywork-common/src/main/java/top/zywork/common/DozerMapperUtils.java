@@ -37,4 +37,12 @@ public class DozerMapperUtils {
         }
         return tList;
     }
+
+    public static List<Object> mapList(Mapper mapper, List<Object> srcList, Class<?> destClass) {
+        List<Object> destList = new ArrayList<>();
+        for (Object obj : srcList) {
+            destList.add(mapper.map(obj, destClass));
+        }
+        return destList;
+    }
 }

@@ -9,7 +9,7 @@ import top.zywork.dto.TemplateDTO;
  * @author 王振宇
  * @version 1.0
  */
-public interface TemplateService extends BaseService<TemplateDTO> {
+public interface TemplateService1 extends BaseService1<Long> {
 
     void save1(Object obj);
 }

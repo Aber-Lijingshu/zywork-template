@@ -2,6 +2,9 @@ package top.zywork.dao;
 
 import org.springframework.stereotype.Repository;
 import top.zywork.dos.TemplateDO;
+import top.zywork.query.PageQuery;
+
+import java.util.List;
 
 /**
  * TemplateDAO接口<br />
@@ -11,7 +14,7 @@ import top.zywork.dos.TemplateDO;
  * @version 1.0
  */
 @Repository
-public interface TemplateDAO extends BaseDAO<TemplateDO> {
+public interface TemplateDAO1 extends BaseDAO1<Long> {
 
     void save1(Object obj);
     

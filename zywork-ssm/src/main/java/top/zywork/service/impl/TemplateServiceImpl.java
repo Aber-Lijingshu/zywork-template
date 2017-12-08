@@ -75,4 +75,9 @@ public class TemplateServiceImpl extends AbstractBaseService implements Template
     public void setTemplateDAO(TemplateDAO templateDAO) {
         this.templateDAO = templateDAO;
     }
+
+    @Override
+    public void save1(Object obj) {
+        templateDAO.save1(obj);
+    }
 }

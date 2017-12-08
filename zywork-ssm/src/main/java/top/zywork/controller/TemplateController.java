@@ -38,7 +38,7 @@ public class TemplateController extends BaseController {
         logger.info(requestContext.getMessage("template.hello"));
         TemplateDTO templateDTO = new TemplateDTO();
         templateDTO.setName("test");
-        templateDTO.setPassword(EncryptUtils.md5("123456"));
+        //templateDTO.setPassword(EncryptUtils.md5("123456"));
         try {
             templateService.save(templateDTO);
         } catch (ServiceException e) {
