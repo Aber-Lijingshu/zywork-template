@@ -28,7 +28,7 @@ public class TemplateService1Test {
     public void testSave1() {
         TemplateDTO templateDTO = new TemplateDTO();
         templateDTO.setName("test");
-        // templateDTO.setPassword(EncryptUtils.md5("123456"));
+        templateDTO.setPassword(EncryptUtils.md5("123456"));
         templateService.save1(templateDTO);
     }
 

@@ -23,11 +23,6 @@ public class TemplateServiceImpl1 extends AbstractBaseService1<Long> implements 
 
     private TemplateDAO1 templateDAO;
 
-    @Resource(name = "templateDAO1")
-    public void setBaseDAO(TemplateDAO1 templateDAO1) {
-        super.setBaseDAO(templateDAO1);
-    }
-
     @PostConstruct
     public void initService() {
         super.initService(TemplateDO.class, TemplateDTO.class);
@@ -40,6 +35,7 @@ public class TemplateServiceImpl1 extends AbstractBaseService1<Long> implements 
 
     @Autowired
     public void setTemplateDAO(TemplateDAO1 templateDAO) {
+        super.setBaseDAO(templateDAO);
         this.templateDAO = templateDAO;
     }
 }
